@@ -2,7 +2,7 @@
 
 ## Resurse software utilizate
 - **Windows 10/11**: Utilizat pentru dezvoltare și deployment.
-- **Ubuntu 20.04+**: Utilizat pentru antrenare de modele. Detalii disponibile [aici](https://cloudut.utcluj.ro/en/).
+- **Ubuntu 20.04+ (gestionat de UTCN)**: Utilizat pentru antrenare de modele. Detalii disponibile [aici](https://cloudut.utcluj.ro/en/).
 - **Git**: Pentru gestionarea versiunilor codului. Descărcare de [aici](https://git-scm.com/download/win).
 - **Node.js și npm**: Pentru gestionarea pachetelor și dezvoltarea frontend-ului. Descărcare de [aici](https://nodejs.org/en).
 - **Python 3.8+**: Pentru dezvoltarea backend-ului și rularea scripturilor. Descărcare de [aici](https://www.python.org/downloads/).
