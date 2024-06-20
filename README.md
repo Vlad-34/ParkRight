@@ -16,7 +16,7 @@
 - **Grafică**: Intel(R) UHD Graphics 128MB VRAM
 - **Stocare**: 2.5GB necesari pentru dezvoltare și 12GB pentru deployment
 
-### Antrenare de dodele
+### Antrenare de modele
 - **Procesor**: Intel(R) Xeon(R) Gold 6330 CPU @ 2.00GHz x 8
 - **Memorie RAM**: 68GB
 - **Cluster GPU**: 16GB VRAM
