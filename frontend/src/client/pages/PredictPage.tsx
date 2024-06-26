@@ -66,7 +66,7 @@ function PredictPage() {
               savePrediction({
                 nickname: nickname.toString(),
                 imageFile: image?.image ?? new File([], ""),
-              })
+              }),
             )
           }
         />

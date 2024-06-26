@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import "jest-styled-components";
-import Chart from "./chart"; // Adjust the import path as necessary.
+import Chart from "./chart";
 
 describe("Chart Component Tests", () => {
   const sampleData: { [key: string]: string | number }[] = [

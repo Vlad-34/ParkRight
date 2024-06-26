@@ -63,16 +63,16 @@ const RegisterPage = ({
   const navigate = useNavigate();
   const user_data = useAppSelector(selectUserData);
   const [firstName, setFirstName] = useState<number | string>(
-    action === "edit" ? (user_data ? user_data.first_name : "") : ""
+    action === "edit" ? (user_data ? user_data.first_name : "") : "",
   );
   const [lastName, setLastName] = useState<number | string>(
-    action === "edit" ? (user_data ? user_data.last_name : "") : ""
+    action === "edit" ? (user_data ? user_data.last_name : "") : "",
   );
   const [username, setUsername] = useState<number | string>(
-    action === "edit" ? (user_data ? user_data.username : "") : ""
+    action === "edit" ? (user_data ? user_data.username : "") : "",
   );
   const [email, setEmail] = useState<number | string>(
-    action === "edit" ? (user_data ? user_data.email : "") : ""
+    action === "edit" ? (user_data ? user_data.email : "") : "",
   );
   const [password, setPassword] = useState<number | string>("");
   const [confirm, setConfirm] = useState<number | string>("");
@@ -95,7 +95,7 @@ const RegisterPage = ({
             username,
             email,
             password,
-          })
+          }),
         );
       } else {
         dispatch(
@@ -105,13 +105,13 @@ const RegisterPage = ({
             username,
             email,
             password,
-          })
+          }),
         );
         dispatch(
           registerFirebase({
             email: email,
             password: password,
-          })
+          }),
         );
       }
 

@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'image_map.apps.ImageMapConfig',
     'scooter.apps.ScooterConfig',
     'user.apps.UserConfig',
+
+    'django_extensions',
 ]
 
 REST_FRAMEWORK = {

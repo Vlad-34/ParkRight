@@ -50,7 +50,7 @@ export const registerFirebase = createAsyncThunk(
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email.toString()!,
-        password.toString()!
+        password.toString()!,
       );
       return userCredential;
     } catch (error) {
@@ -58,7 +58,7 @@ export const registerFirebase = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 /**
@@ -77,7 +77,7 @@ export const loginFirebase = createAsyncThunk(
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email!,
-        password!
+        password!,
       );
       setPersistence(auth, browserSessionPersistence);
       return userCredential;
@@ -86,7 +86,7 @@ export const loginFirebase = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 /**
@@ -129,7 +129,7 @@ export const createAccount = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 /**
@@ -162,7 +162,7 @@ export const login = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 /**
@@ -179,7 +179,7 @@ export const refresh = createAsyncThunk("auth/refresh", async () => {
         "http://localhost:8000/auth/token/refresh",
         {
           refresh: refreshToken,
-        }
+        },
       );
       return response.data;
     }
@@ -255,7 +255,7 @@ export const editProfile = createAsyncThunk(
           headers: {
             Authorization: `Bearer ${loadState()?.auth.accessToken}`,
           },
-        }
+        },
       );
       return response.data;
     } catch (error) {
@@ -263,7 +263,7 @@ export const editProfile = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 /**
@@ -281,7 +281,7 @@ export const sendConfirmationEmail = createAsyncThunk(
         "http://localhost:8000/auth/send-confirmation-email",
         {
           email,
-        }
+        },
       );
       return response.data;
     } catch (error) {
@@ -289,7 +289,7 @@ export const sendConfirmationEmail = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 /**
@@ -309,7 +309,7 @@ export const resetPassword = createAsyncThunk(
         {
           email,
           password,
-        }
+        },
       );
       return response.data;
     } catch (error) {
@@ -317,7 +317,7 @@ export const resetPassword = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 export const authSlice = createSlice({

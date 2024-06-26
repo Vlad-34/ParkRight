@@ -38,7 +38,7 @@ export const predict = createAsyncThunk(
           headers: {
             Authorization: `Bearer ${loadState()?.auth.accessToken}`,
           },
-        }
+        },
       );
       return response.data;
     } catch (error) {
@@ -46,7 +46,7 @@ export const predict = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 /**
@@ -83,7 +83,7 @@ export const savePrediction = createAsyncThunk(
             headers: {
               Authorization: `Bearer ${loadState()?.auth.accessToken}`,
             },
-          }
+          },
         );
         return response.data;
       } else {
@@ -94,7 +94,7 @@ export const savePrediction = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 export const predictSlice = createSlice({

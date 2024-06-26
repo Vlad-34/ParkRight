@@ -48,10 +48,10 @@ export const getImages = createAsyncThunk(
   "statistics/getImages",
   async (data: ImageMap[]) => {
     const images = await Promise.all(
-      data.map((element) => getImage(element.image))
+      data.map((element) => getImage(element.image)),
     );
     return images;
-  }
+  },
 );
 
 /**
@@ -73,7 +73,7 @@ export const getStatistics = createAsyncThunk(
           headers: {
             Authorization: `Bearer ${loadState()?.auth.accessToken}`,
           },
-        }
+        },
       );
       getImages(response.data);
       return response.data;
@@ -82,7 +82,7 @@ export const getStatistics = createAsyncThunk(
         alert("Something went wrong: " + error.message);
       }
     }
-  }
+  },
 );
 
 export const statisticsSlice = createSlice({

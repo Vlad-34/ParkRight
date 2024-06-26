@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import "jest-styled-components";
-import ImageCard from "./imageCard"; // Adjust the import path as necessary
+import ImageCard from "./imageCard";
 
 describe("ImageCard Component", () => {
   const props = {

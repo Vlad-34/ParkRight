@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import "jest-styled-components";
 import { BrowserRouter as Router } from "react-router-dom";
-import Navbar from "./navbar"; // Adjust the import path as necessary
+import Navbar from "./navbar";
 
 describe("Navbar Component Tests", () => {
   const buttonContent = [

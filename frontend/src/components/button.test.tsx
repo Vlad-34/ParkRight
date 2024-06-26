@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import "jest-styled-components";
-import Button from "./button"; // Adjust the import path as necessary.
+import Button from "./button";
 
 describe("Button Component Tests", () => {
   // Test to check if the button renders correctly with given content

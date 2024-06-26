@@ -25,11 +25,11 @@ const schema = yup
       .matches(/[0-9]/, "Password must contain at least one number")
       .matches(
         /[\^$*.[\]{}()?\-"!@#%&/,><':;|_~`]/,
-        "Password must contain at least one special character"
+        "Password must contain at least one special character",
       )
       .notOneOf(
         [yup.ref("username"), null],
-        "Password must not be the same as the username"
+        "Password must not be the same as the username",
       ),
     confirm: yup
       .string()
@@ -64,7 +64,7 @@ const ResetPasswordPage = () => {
       dispatch(
         resetPassword({
           password: password.toString(),
-        })
+        }),
       );
     } catch (error) {
       alert(`${(error as AxiosError).message}`);

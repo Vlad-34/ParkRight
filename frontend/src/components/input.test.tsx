@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import "jest-styled-components";
-import Input from "./input"; // Adjust the import path as necessary
+import Input from "./input";
 
 describe("Input Component Tests", () => {
   it("renders Input with text type and updates its value on change", () => {

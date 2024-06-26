@@ -153,7 +153,7 @@ const ChatConvo = ({
                     content: message.toString(),
                     timestamp: new Date().toISOString(),
                   },
-                })
+                }),
               );
               setMessage("");
             }}
