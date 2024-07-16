@@ -3,10 +3,16 @@ import Chart from "../../components/chart";
 import CustomSelect from "../../components/dropdown";
 import Input from "../../components/input";
 import Button from "../../components/button";
-import React from "react";
+import React, { useEffect } from "react";
 import { useAppDispatch } from "../../store/hooks";
-import { getImages, getStatistics, selectImages, selectStatistics } from "..";
-import { useSelector } from "react-redux";
+import {
+  clear,
+  getImages,
+  getStatistics,
+  selectImages,
+  selectStatistics,
+} from "..";
+import { useAppSelector } from "../../store/hooks";
 import { ImageMap } from "../../types/userTypes";
 import { DialogTitle } from "@mui/material";
 import ImageCard from "../../components/imageCard";
@@ -42,13 +48,17 @@ const ItemStyle: React.CSSProperties = {
  * @returns StatisticsPage component
  */
 const StatisticsPage = () => {
-  const data = useSelector(selectStatistics);
+  const data = useAppSelector(selectStatistics);
 
   const [value1, setValue1] = React.useState<number | string>(0);
   const [value2, setValue2] = React.useState<number | string>(0);
   const [value3, setValue3] = React.useState<number | string>(0);
   const dispatch = useAppDispatch();
-  const images = useSelector(selectImages);
+  const images = useAppSelector(selectImages);
+
+  useEffect(() => {
+    dispatch(clear());
+  }, []);
 
   return (
     <div>
@@ -92,7 +102,7 @@ const StatisticsPage = () => {
                 value: value2 === 1 ? "scooter" : "user",
                 id: Number(value1),
                 time: value3 === 1 ? "week" : "month",
-              }),
+              })
             );
             dispatch(getImages(data));
           }}
@@ -114,7 +124,7 @@ const StatisticsPage = () => {
                   bad: number;
                 };
               },
-              item: ImageMap,
+              item: ImageMap
             ) => {
               const date = new Date(item.timestamp);
               const day = date.toLocaleDateString("en-US", { weekday: "long" });
@@ -134,8 +144,8 @@ const StatisticsPage = () => {
 
               return acc;
             },
-            {},
-          ),
+            {}
+          )
         ).map(
           ([key, value]: [
             string,
@@ -147,7 +157,7 @@ const StatisticsPage = () => {
             timestamp: key,
             [key + " good"]: value.good,
             [key + " bad"]: value.bad,
-          }),
+          })
         )}
       />
       <div
@@ -181,7 +191,7 @@ const StatisticsPage = () => {
                     timestamp={new Date(data[index].timestamp).toLocaleString()}
                     prediction={data[index].prediction}
                   />
-                ),
+                )
             )
           : null}
       </div>
